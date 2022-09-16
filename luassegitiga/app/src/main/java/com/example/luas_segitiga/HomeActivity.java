@@ -52,6 +52,7 @@ public class HomeActivity extends AppCompatActivity {
                 luas.setText(String.valueOf(result));
             }
         });
+        
         clear.setOnClickListener(view -> {
             clear();
         });
