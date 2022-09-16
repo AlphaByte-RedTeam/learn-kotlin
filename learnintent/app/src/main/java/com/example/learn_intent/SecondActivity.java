@@ -13,7 +13,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        TextView textView = findViewById(R.id.textView);
+        TextView textView = findViewById(R.id.textView2);
         Intent terima = getIntent();
         Bundle bundle = terima.getExtras();
 

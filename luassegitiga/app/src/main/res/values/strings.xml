@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">luas-segitiga</string>
+    <string name="luas_segitiga">Luas Segitiga</string>
+    <string name="todo">TODO</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="button">Button</string>
+    <string name="login">Login</string>
+    <string name="input_alas">Input Alas</string>
+    <string name="input_tinggi">Input Tinggi</string>
+    <string name="clear">Clear</string>
+    <string name="hitung">Hitung</string>
+    <string name="logout">Logout</string>
+    <string name="textview">TextView</string>
+</resources>
