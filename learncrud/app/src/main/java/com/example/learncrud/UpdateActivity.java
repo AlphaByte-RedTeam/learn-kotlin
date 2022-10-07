@@ -10,25 +10,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class UpdateActivity extends AppCompatActivity {
 
     DatabaseHelper myDb;
-    EditText editName, editSurname, editMarks;
+    EditText editName, editSurname, editMarks, editTextId;
     Button btnAddData, btnViewAll, btnUpdate, btnDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_update);
         myDb = new DatabaseHelper(this);
-        editName = findViewById(R.id.editName);
-        editSurname = findViewById(R.id.editSurname);
-        editMarks = findViewById(R.id.editMarks);
+        editName = findViewById(R.id.editNameUpdate);
+        editSurname = findViewById(R.id.editSurnameUpdate);
+        editMarks = findViewById(R.id.editMarksUpdate);
+        editTextId = findViewById(R.id.editTextIdUpdate);
 
-        btnAddData = findViewById(R.id.btnAdd);
-        btnViewAll = findViewById(R.id.btnView);
-        btnUpdate = findViewById(R.id.btnUpdate);
-        btnDelete = findViewById(R.id.btnDelete);
+        btnAddData = findViewById(R.id.btnAddUpdate);
+        btnViewAll = findViewById(R.id.btnViewUpdate);
+        btnUpdate = findViewById(R.id.btnUpdateUpdate);
+        btnDelete = findViewById(R.id.btnDeleteUpdate);
         addData();
         updateData();
         deleteData();
@@ -43,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
                     editMarks.getText().toString()
             );
             if (isInserted) {
-                Toast.makeText(MainActivity.this, "Data Inserted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UpdateActivity.this, "Data Inserted", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(MainActivity.this, "Data not Inserted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UpdateActivity.this, "Data not Inserted", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -78,15 +79,28 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateData() {
         btnUpdate.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, UpdateActivity.class);
-            startActivity(intent);
+            boolean isUpdate = myDb.updateData(
+                    editTextId.getText().toString(),
+                    editName.getText().toString(),
+                    editSurname.getText().toString(),
+                    editMarks.getText().toString()
+            );
+            if (isUpdate) {
+                Toast.makeText(UpdateActivity.this, "Data Updated", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(UpdateActivity.this, "Data not Updated", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 
     public void deleteData() {
         btnDelete.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, UpdateActivity.class);
-            startActivity(intent);
+            Integer deletedRows = myDb.deleteData(editTextId.getText().toString());
+            if (deletedRows > 0) {
+                Toast.makeText(UpdateActivity.this, "Data Deleted", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(UpdateActivity.this, "Data not Deleted", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }
