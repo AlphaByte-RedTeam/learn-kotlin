@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">learnvolleyandmysql</string>
+    <string name="view_data">View Data</string>
+    <string name="add_data">Add Data</string>
+    <string name="nama">Nama</string>
+    <string name="harga">Harga</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="add_new">Add New</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>
