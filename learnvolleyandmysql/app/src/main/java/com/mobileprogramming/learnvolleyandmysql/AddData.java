@@ -94,7 +94,7 @@ public class AddData extends AppCompatActivity {
             if (action.equals("delete"))
                 finish();
         }, error -> {
-            VolleyLog.d(TAG, String.format("Error: ", error.getMessage()));
+            VolleyLog.d(TAG, String.format("Error: %s", error.getMessage()));
         }){
             @Nullable
             @Override
