@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">learnapi</string>
+    <string name="cari">Cari</string>
+    <string name="nama_movie">Nama Movie</string>
+    <string name="button">Button</string>
+    <string name="name">Name</string>
+    <string name="todo">TODO</string>
+    <string name="judul">Judul</string>
+    <string name="aktor">Aktor</string>
+    <string name="plot">Plot</string>
+    <string name="genre">Genre</string>
 </resources>
