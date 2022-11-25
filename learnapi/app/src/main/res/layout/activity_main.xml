@@ -85,4 +85,14 @@
         android:text="@string/genre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPlot" />
+
+    <TextView
+        android:id="@+id/textViewDirector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/director"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGenre" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText searchInput;
     ImageView poster;
     private MovieService movieService;
-    TextView textViewPlot, textViewMovie, textViewTitle, textViewGenre;
+    TextView textViewPlot, textViewMovie, textViewTitle, textViewGenre, textViewDirector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewPlot = findViewById(R.id.textViewPlot);
         textViewTitle = findViewById(R.id.textViewTitle);
         textViewGenre = findViewById(R.id.textViewGenre);
+        textViewDirector = findViewById(R.id.textViewDirector);
         btnSearch.setOnClickListener(this);
     }
 
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewMovie.setText("Actor: " + (response.body().getActors()).toString());
         textViewPlot.setText("Plot: " + (response.body().getPlot()).toString());
         textViewGenre.setText("Genre: " + (response.body().getGenre()).toString());
+        textViewDirector.setText("Director: " + (response.body().getDirector()).toString());
         Log.i("MainActivity", "onResponse: " + response.body().getPoster());
         Picasso.with(this).load(response.body().getPoster()).into(poster);
     }
