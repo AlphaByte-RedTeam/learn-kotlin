@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">sistemabsen</string>
+    <string name="hello">Hello</string>
+    <string name="absen_masuk">Absen Masuk</string>
+    <string name="absen_pulang">Absen Pulang</string>
+    <string name="keluar">Keluar</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="dont_have_an_account_nregister_here">Dont\' have an account?\nRegister Here</string>
+    <string name="password">Password</string>
 </resources>
